@@ -11,8 +11,11 @@ const scoreboard = {
 
 // Play game
 function play(e) {
-    console.log(e.target.id);
+    const playerChoice = e.target.id;
+    const computerChoice = getComputerChoice();
 }
+
+// Get computer's choice
 
 // Event listeners
 for (let i = 0; i < choices.length; i++) {
