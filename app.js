@@ -13,6 +13,9 @@ const scoreboard = {
 function play(e) {
     const playerChoice = e.target.id;
     const computerChoice = getComputerChoice();
+    const winner = getWinner(playerChoice, computerChoice);
+
+    console.log(playerChoice, computerChoice, winner);
 }
 
 // Get computer's choice
@@ -26,6 +29,31 @@ function getComputerChoice() {
         return 'scissors';
     }
 }
+
+// Get game winner
+function getWinner(player, computer) {
+    if(player === computer ) {
+        return 'draw';
+    } else if(player === 'rock') {
+        if(computer === 'scissors') {
+            return 'player'; 
+        } else {
+            return 'computer';
+        };
+    } else if(player === 'paper') {
+        if(computer === 'rock') {
+            return 'player';
+        } else {
+            return 'computer';
+        };
+    } else if(player === 'scissors') {
+        if(computer === 'paper') {
+            return 'player';
+        } else {
+            return 'computer';
+        }
+    }
+};
 
 // Event listeners
 for (let i = 0; i < choices.length; i++) {
