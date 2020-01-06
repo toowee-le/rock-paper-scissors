@@ -76,8 +76,18 @@ function showScore(winner) {
         computerScore.innerHTML = `${scoreboard.computer}`;
     }
 }
+// Restart game
+function restartGame() {
+    // Reset scoreboard to 0
+    scoreboard.player = 0;
+    scoreboard.computer = 0;
+    playerScore.innerHTML = `${scoreboard.player}`;
+    computerScore.innerHTML = `${scoreboard.computer}`;
+}
 
 // Event listeners
 for (let i = 0; i < choices.length; i++) {
     choices[i].addEventListener('click', play);
-}
+};
+
+restart.addEventListener('click', restartGame);
