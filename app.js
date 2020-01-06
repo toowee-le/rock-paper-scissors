@@ -63,15 +63,19 @@ function showScore(winner) {
     if (winner === 'player') {
         // Increment player's score
         scoreboard.player++;
+        // Display player's result in popup
+        alert('You win!');
         // Display player's score on scoreboard
         playerScore.innerHTML = `${scoreboard.player}`;
     } else if (winner === 'computer') {
         // Increment computer's score
         scoreboard.computer++;
+        alert('You lose!');
         // Display computer's score on scoreboard
         computerScore.innerHTML = `${scoreboard.computer}`;
     } else {
         // If a draw, display the scoreboard without incrementing
+        alert('It\'s a draw!');
         playerScore.innerHTML = `${scoreboard.player}`;
         computerScore.innerHTML = `${scoreboard.computer}`;
     }
