@@ -1,4 +1,6 @@
 // DOM elements that we need
+let playerScore = document.getElementById('playerScore');
+let computerScore = document.getElementById('computerScore');
 const choices = document.querySelectorAll('.choice');
 const score = document.getElementById('score-board');
 const result = document.getElementById('result');
@@ -14,6 +16,7 @@ function play(e) {
     const playerChoice = e.target.id;
     const computerChoice = getComputerChoice();
     const winner = getWinner(playerChoice, computerChoice);
+    showScore(winner, computerChoice);
 
     console.log(playerChoice, computerChoice, winner);
 }
@@ -54,6 +57,25 @@ function getWinner(player, computer) {
         }
     }
 };
+
+// Show score
+function showScore(winner) {
+    if (winner === 'player') {
+        // Increment player's score
+        scoreboard.player++;
+        // Display player's score on scoreboard
+        playerScore.innerHTML = `${scoreboard.player}`;
+    } else if (winner === 'computer') {
+        // Increment computer's score
+        scoreboard.computer++;
+        // Display computer's score on scoreboard
+        computerScore.innerHTML = `${scoreboard.computer}`;
+    } else {
+        // If a draw, display the scoreboard without incrementing
+        playerScore.innerHTML = `${scoreboard.player}`;
+        computerScore.innerHTML = `${scoreboard.computer}`;
+    }
+}
 
 // Event listeners
 for (let i = 0; i < choices.length; i++) {
