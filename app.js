@@ -86,8 +86,10 @@ function restartGame() {
 }
 
 // Event listeners
+// Get the choice that was clicked on
 for (let i = 0; i < choices.length; i++) {
     choices[i].addEventListener('click', play);
 };
 
+// Restart the game when restart button is clicked on
 restart.addEventListener('click', restartGame);
