@@ -65,6 +65,7 @@ function showScore(winner, computerChoice) {
         // Show player's result in modal
         result.innerHTML = `
             <h1>You Win!</h1>
+            <i class="choice fas fa-hand-${computerChoice} fa-8x"></i>
             <p>Computer chose <strong>${computerChoice}</strong></p>
             `;
         // Display player's score on scoreboard
@@ -75,6 +76,7 @@ function showScore(winner, computerChoice) {
         // Show player's result in modal
         result.innerHTML = `
             <h1>You Lose!</h1>
+            <i class="choice fas fa-hand-${computerChoice} fa-8x"></i>
             <p>Computer chose <strong>${computerChoice}</strong></p>
             `;
         // Display computer's score on scoreboard
@@ -82,6 +84,7 @@ function showScore(winner, computerChoice) {
     } else {
         result.innerHTML = `
             <h1>It's a draw!</h1>
+            <i class="choice fas fa-hand-${computerChoice} fa-8x"></i>
             <p>Computer chose <strong>${computerChoice}</strong></p>
             `;
         playerScore.innerHTML = `${scoreboard.player}`;
