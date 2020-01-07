@@ -1,0 +1,33 @@
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background: #fff;
+    text-align: center;
+    margin: 10% auto;
+    padding: 1rem;
+    border-radius: 10px;
+    width: 300px;
+    animation-name: modalpopup;
+    animation-duration: 1s; 
+}
+
+@keyframes modalpopup {
+    from {
+        opacity: 0; /* invisible */
+    }
+
+    to {
+        opacity: 1;
+    }
+}

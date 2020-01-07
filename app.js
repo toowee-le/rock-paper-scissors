@@ -3,6 +3,7 @@ let playerScore = document.getElementById('playerScore');
 let computerScore = document.getElementById('computerScore');
 const choices = document.querySelectorAll('.choice');
 const score = document.getElementById('score-board');
+const modal = document.querySelector('.modal');
 const result = document.getElementById('result');
 const restart = document.getElementById('restart');
 
@@ -17,8 +18,6 @@ function play(e) {
     const computerChoice = getComputerChoice();
     const winner = getWinner(playerChoice, computerChoice);
     showScore(winner, computerChoice);
-
-    console.log(playerChoice, computerChoice, winner);
 }
 
 // Get computer's choice
@@ -59,27 +58,46 @@ function getWinner(player, computer) {
 };
 
 // Show score
-function showScore(winner) {
+function showScore(winner, computerChoice) {
     if (winner === 'player') {
         // Increment player's score
         scoreboard.player++;
-        // Display player's result in popup
-        alert('You win!');
+        // Show player's result in modal
+        result.innerHTML = `
+            <h1>You Win!</h1>
+            <p>Computer chose <strong>${computerChoice}</strong></p>
+            `;
         // Display player's score on scoreboard
         playerScore.innerHTML = `${scoreboard.player}`;
     } else if (winner === 'computer') {
         // Increment computer's score
         scoreboard.computer++;
-        alert('You lose!');
+        // Show player's result in modal
+        result.innerHTML = `
+            <h1>You Lose!</h1>
+            <p>Computer chose <strong>${computerChoice}</strong></p>
+            `;
         // Display computer's score on scoreboard
         computerScore.innerHTML = `${scoreboard.computer}`;
     } else {
-        // If a draw, display the scoreboard without incrementing
-        alert('It\'s a draw!');
+        result.innerHTML = `
+            <h1>It's a draw!</h1>
+            <p>Computer chose <strong>${computerChoice}</strong></p>
+            `;
         playerScore.innerHTML = `${scoreboard.player}`;
         computerScore.innerHTML = `${scoreboard.computer}`;
     }
+    // Display modal with result
+    modal.style.display = "block";
 }
+
+// Exit modal
+function clearModal(e) {
+    if (e.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
 // Restart game
 function restartGame() {
     // Reset scoreboard to 0
@@ -97,3 +115,6 @@ for (let i = 0; i < choices.length; i++) {
 
 // Restart the game when restart button is clicked on
 restart.addEventListener('click', restartGame);
+
+// When user clicks outside the modal, hide result modal
+window.addEventListener('click', clearModal);
