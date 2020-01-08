@@ -1,3 +1,63 @@
+@import url('https://fonts.googleapis.com/css?family=Yantramanav&display=swap');
+
+body {
+    font-family: 'Yantramanav', sans-serif;
+}
+
+.container {
+    margin: 0 auto;
+    text-align: center;
+    overflow: hidden;
+}
+
+.score-board {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.score-board p:first-child {
+    background-color: #10365f;
+    color: #fff;
+}
+
+.score-board p:last-child {
+    background-color: #000;
+    color: #fff;
+}
+
+.restart-btn {
+    outline: none;
+    border: none;
+    padding: .6em 1em;
+    cursor: pointer;
+    font-size: .8rem;
+}
+
+.restart-btn:hover {
+    background-color: #10365f;
+    color: #fff;
+    transition: .3s;
+}
+
+/* Choices */
+
+#icon-choices {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2em;
+}
+
+i {
+    cursor: pointer;
+}
+
+i:hover {
+    color: #10365f;
+    transition: .2s;
+}
+
 /* Modal */
 .modal {
     display: none;
