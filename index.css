@@ -42,20 +42,38 @@ body {
 }
 
 /* Choices */
-
 #icon-choices {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 2em;
 }
 
-i {
+.choice {
     cursor: pointer;
 }
 
-i:hover {
+.choice:hover {
     color: #10365f;
     transition: .2s;
+}
+
+@media (max-width: 750px) {
+    .choice {
+        font-size: 130px;
+    }
+}
+
+@media (max-width: 650px) {
+    .choice {
+        font-size: 90px;
+    }
+}
+
+@media (max-width: 300px) {
+    #icon-choices {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 /* Modal */
