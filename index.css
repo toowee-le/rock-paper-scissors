@@ -4,6 +4,18 @@ body {
     font-family: 'Yantramanav', sans-serif;
 }
 
+.text-win {
+    color: #00cc00;
+}
+
+.text-lose {
+    color: #cc0000;
+}
+
+.text-draw {
+    color: #595959;
+}
+
 .container {
     margin: 0 auto;
     text-align: center;
