@@ -92,6 +92,7 @@ function showScore(winner, computerChoice) {
     }
     // Display modal with result
     modal.style.display = "block";
+    restart.style.display = "block";
 }
 
 // Exit modal

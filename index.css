@@ -28,8 +28,10 @@ body {
 }
 
 .restart-btn {
+    display: none;
     outline: none;
     border: none;
+    margin: 0 auto;
     padding: .6em 1em;
     cursor: pointer;
     font-size: .8rem;
