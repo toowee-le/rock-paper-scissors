@@ -1,5 +1,5 @@
 # Rock Paper Scissors :punch: :raised_hand: :v:
 
-The classic 'rock paper scissors' game in vanilla JavaScript. Built with the aim to practice JS.
+Built the classic 'rock paper scissors' game with the aim to practice JavaScript.
 
 Play the game [here](https://toowee-le.github.io/rock-paper-scissors/).
